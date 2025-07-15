@@ -1,0 +1,16 @@
+stages:
+  - distributed_rdma
+
+variables:
+  GIT_STRATEGY: fetch
+
+run_distributed:
+  stage: distributed_rdma
+  tags:
+    - adms_project_rdma
+  only:
+    refs:
+      - main
+  script:
+    - echo "Hello World"
+  timeout: 10 minutes
